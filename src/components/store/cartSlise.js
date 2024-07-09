@@ -9,12 +9,13 @@ const cartSlise = createSlice({
             state.push(action.payload)
         },
 
-        delete(){
-            // todo
+        deleteToCart(state, action) {
+            
+            return state.filter(item=>item.id !== action.payload)
         }
+        
     }
 })
 
-export const {addToCard} = cartSlise.actions;
-
+export const {addToCard , deleteToCart} = cartSlise.actions;
 export default cartSlise.reducer; 
